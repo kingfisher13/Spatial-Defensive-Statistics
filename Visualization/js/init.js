@@ -17,7 +17,7 @@ var spatialConfig = {
 };
 
 d3.queue()
-  .defer(d3.json, 'data/' + gameID + '-simpleClosest.json')
+  .defer(d3.json, 'data/' + gameID + '.simpleClosest.json')
   .await(function (error, data) {
     DATA = data;
     console.log(DATA);
