@@ -273,6 +273,7 @@ function updateUIDetails(frame) {
 
 function updatePlusMinusAndScore(frame) {
   var pbp = frame[6];
+  $('.result--cell').text('');
   if (pbp.off && pbp.off.pts) {
     // add pts to offensive player
     var offPlayer = pbp.off.player_id;

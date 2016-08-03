@@ -65,7 +65,15 @@ svg {
   background-color: #aaa
 }
 
-/* Extra Information area */
+/* Bottom area */
+
+.bottom {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 100%;
+}
 
 .extra-information p {
   font-weight: bold;
