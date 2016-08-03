@@ -22,7 +22,10 @@
       <p><a class="nav--link"  href="../index.html">Tables</a></p>
       <p><a class="nav--link"  href="#">Visualization</a></p>
     </nav>
+
     <div class="main-wrapper">
+
+      <!-- Top information -->
       <div class="title-bar">
         <span class="title-bar--home"></span>
         <span> vs </span>
@@ -31,6 +34,8 @@
       <div>
         <span class="game-date"></span>
       </div>
+
+      <!-- Court/Timings/Score bar -->
       <svg class="court"></svg>
       <div class="time-bar">
         <div class="time-bar--block">Quarter: <span class="quarter"></span></div>
@@ -38,6 +43,8 @@
         <span class="time-bar--block game-clock"></span>
         <span class="time-bar--block shot-clock"></span>
       </div>
+
+      <!-- Animation controls -->
       <div class="play-controls">
         <button class="btn play-controls--play">Play</button>
         <button class="btn play-controls--pause">Pause</button>
@@ -45,18 +52,19 @@
         <button class="btn play-controls--forward">Forward 1 Frame</button>
         <button class="btn play-controls--back">Back 1 Frame</button>
       </div>
-      <div class="ratings">
-        <table class="ratings--table">
-          <thead><tr><td colspan="2" class="ratings--home-team"></td></tr></thead>
-          <tbody class="ratings--home-table-body"></tbody>
-        </table>
-        <div class="ratings--middle">
-          <div class="possession-arrow arrow-right"></div>
-          <span class="last-play"></span>
-        </div>
-        <table class="ratings--table">
-          <thead><tr><td colspan="2" class="ratings--away-team"></td></tr></thead>
-          <tbody class="ratings--away-table-body"></tbody>
+
+      <!-- Extra information -->
+      <div class="extra-information">
+        <p>Ball Handler: <span class="ball-handler"></span></p>
+        <p>Last Play: <span class="last-play"></span></p>
+        <p>Plus/Minus Results:</p>
+        <table class="result-table">
+          <thead><tr>
+            <td>Team</td>
+            <td>Player</td>
+            <td>+/-</td>
+          </tr></thead>
+          <tbody class="results"></tbody>
         </table>
       </div>
     </div>
