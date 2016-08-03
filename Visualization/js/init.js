@@ -256,7 +256,7 @@ function updatePlayerDefensiveAssignment(frame) {
 
 function updateUIDetails(frame) {
   //update game and shot clocks
-  $('.quarter').text(frame[0]);
+  $('.period').text(frame[0]);
   var gameMinutes = Math.floor(frame[2] / 60);
   var gameSeconds = pad(Math.round(frame[2] - gameMinutes * 60));
   $('.game-clock').text(gameMinutes + ':' + gameSeconds);
