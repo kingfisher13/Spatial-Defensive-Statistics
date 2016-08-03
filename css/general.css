@@ -1,0 +1,23 @@
+/*-------------------------
+- Project general CSS rules
+-------------------------*/
+
+/* Fonts and typography */
+
+html,
+body{
+  font-family: 'Arial', sans-serif; /* text/default font */
+}
+
+.display-font {
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+}
+
+
+/* if the highlight color changes based on JS, don't use this class, use js-highlight-color instead */
+
+.horz-bar,
+.vert-bar {
+  border-color: #252525;
+}

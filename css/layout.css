@@ -1,0 +1,14 @@
+/*-------------------------
+- Project specific Layout CSS rules
+-------------------------*/
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.stats-table {
+  width: 100%;
+}
