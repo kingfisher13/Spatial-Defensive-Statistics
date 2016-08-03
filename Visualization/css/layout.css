@@ -65,64 +65,33 @@ svg {
   background-color: #aaa
 }
 
-/* Ratings Table */
+/* Extra Information area */
 
-.ratings {
-  align-items: center;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.ratings--table {
-  width: 400px;
-}
-
-.ratings--table thead {
+.extra-information p {
   font-weight: bold;
-  text-align: center;
 }
 
-.ratings--table td {
-  border: 1px solid #ccc;
-  min-width: 50px;
-  padding: 2px 10px;
-}
-
-.ratings--middle {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  width: 400px;
+.extra-information p span {
+  font-weight: normal;
 }
 
 .last-play {
   font-style: italic;
 }
 
-/* Possession arrow indicator */
-.possession-arrow {
-  height: 0;
-  margin-bottom: 20px;
-  width: 0;
+.result-table {
+  min-width: 400px;
 }
 
-.arrow-right {
-	border-top: 60px solid transparent;
-	border-bottom: 60px solid transparent;
-	border-left: 60px solid #ccc;
+.result-table thead {
+  font-weight: bold;
+  text-align: center;
 }
 
-.arrow-left {
-	border-top: 60px solid transparent;
-	border-bottom: 60px solid transparent;
-	border-right:60px solid #ccc;
-}
-
-.arrow-down {
-	border-left: 60px solid transparent;
-	border-right: 60px solid transparent;
-	border-top: 60px solid #ccc;
+.result-table td {
+  border: 1px solid #ccc;
+  min-width: 50px;
+  padding: 2px 10px;
 }
 
 /* On Court stuff */

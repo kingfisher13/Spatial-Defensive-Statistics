@@ -32,10 +32,12 @@ function prepPlayerData() {
 
   DATA.players.home.map(function (p) {
     p.team = DATA.teams.home.abbreviation;
+    p.name = p.firstname + ' ' + p.lastname;
   });
 
   DATA.players.visitor.map(function (p) {
     p.team = DATA.teams.visitor.abbreviation;
+    p.name = p.firstname + ' ' + p.lastname;
   });
 
   DATA.allPlayers = ball.concat(DATA.players.home, DATA.players.visitor);
@@ -80,21 +82,6 @@ function buildUI() {
 
   $('.play-controls--back').on('click', function () {
     reverseAnimationOneFrame();
-  });
-
-  //Defensive Ratings table
-  $('.ratings--home-team').text(DATA.teams.home.name);
-  $('.ratings--away-team').text(DATA.teams.visitor.name);
-
-  DATA.allPlayers.forEach(function (player) {
-    if (player.lastname === 'ball') return;
-
-    var $row = $('<tr>')
-      .append('<td>' + player.firstname + ' ' + player.lastname + '</td>')
-      .append('<td class="ratings---cell ratings--' + player.playerid + '"></td>');
-
-    if (player.team === homeAbbr) $row.appendTo($('.ratings--home-table-body'));
-    else $row.appendTo($('.ratings--away-table-body'));
   });
 }
 
@@ -262,11 +249,26 @@ function updateUIDetails(frame) {
   $('.game-clock').text(gameMinutes + ':' + gameSeconds);
   $('.shot-clock').text(':' + pad(Math.floor(frame[3])));
 
-  $('.ratings--table tbody td').css('font-weight', '400');
-  if (gameDetails.playerWithBall != -1) $('.ratings--' + gameDetails.playerWithBall.playerid).prev().css('font-weight', 'bold');
+  // Player with ball
+  if (gameDetails.playerWithBall != -1) $('.ball-handler').text(gameDetails.playerWithBall.name);
 
-  if (gameDetails.teamPossession === DATA.teams.visitor.abbreviation) $('.possession-arrow').addClass('arrow-right').removeClass('arrow-left arrow-down').css('border-left-color', teamStyles[DATA.teams.visitor.abbreviation]);
-  else $('.possession-arrow').addClass('arrow-left').removeClass('arrow-right arrow-down').css('border-right-color', teamStyles[DATA.teams.home.abbreviation]);
+  // On court players are in Plus/minus table
+  frame[5].forEach(function (frameP) {
+    if (frameP[1] !== -1 && $('#r' + frameP[1]).length === 0) {
+      DATA.allPlayers.forEach(function (p) {
+        if (p.playerid === frameP[1]) {
+          $('<tr>')
+            .attr('id', 'r' + p.playerid)
+            .append('<td>' + p.team + '</td>')
+            .append('<td>' + p.name + '</td>')
+            .append('<td class="result--cell"></td>')
+            .appendTo($('.results'));
+        }
+      });
+    }
+  });
+
+  if ($('.results tr').length > 10) $('.results').empty();
 }
 
 function updatePlusMinusAndScore(frame) {
@@ -274,10 +276,7 @@ function updatePlusMinusAndScore(frame) {
   if (pbp.off && pbp.off.pts) {
     // add pts to offensive player
     var offPlayer = pbp.off.player_id;
-    var current = $('.ratings--' + offPlayer).text();
-    if (!current) current = 0;
-    var added = parseInt(current) + pbp.off.pts;
-    $('.ratings--' + offPlayer).text(added);
+    $('#r' + offPlayer).find('.result--cell').text(pbp.off.pts);
 
     //update scoreboard
     $('.score').text(pbp.score);
@@ -287,10 +286,8 @@ function updatePlusMinusAndScore(frame) {
       if (p.indexOf(offPlayer) >= 0) {
         p.forEach(function (defPlayer) {
           if (defPlayer === offPlayer) return;
-          var current = $('.ratings--' + defPlayer).text();
-          if (!current) current = 0;
-          var minus = parseInt(current) - pbp.off.pts;
-          $('.ratings--' + defPlayer).text(minus);
+
+          $('#r' + defPlayer).find('.result--cell').text('-' + pbp.off.pts);
         });
       }
     });
