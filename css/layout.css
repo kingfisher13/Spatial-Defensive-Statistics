@@ -1,6 +1,10 @@
 /*-------------------------
-- Project specific Layout CSS rules
+- Main page Layout CSS rules
 -------------------------*/
+
+nav {
+  float: left;
+}
 
 .wrapper {
   align-items: center;

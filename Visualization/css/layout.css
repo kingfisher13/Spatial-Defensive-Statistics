@@ -3,6 +3,10 @@ D3 Basketball visualization
 - Project specific Layout CSS rules
 -------------------------*/
 
+nav {
+  float: left;
+}
+
 .main-wrapper {
   align-items: center;
   display: flex;
