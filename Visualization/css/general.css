@@ -1,0 +1,48 @@
+/*-------------------------
+Axis Maps
+- Project general CSS rules
+-------------------------*/
+
+/* Fonts and typography */
+
+html,
+body{
+  color: #383838;
+  font-family: 'Arial', sans-serif; /* text/default font */
+}
+
+.display-font {
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+}
+
+/* Colors */
+a {
+  color: #707715;
+}
+
+a:hover,
+a:visited {
+  color: #707715;
+}
+
+/* if the highlight color changes based on JS, don't use this class, use js-highlight-color instead */
+.bg-highlight-color {
+  background-color: #123abc;
+}
+
+.highlight-color {
+  color: #123abc;
+}
+
+.horz-bar,
+.vert-bar {
+  border-color: #252525;
+}
+
+
+/* Misc General styles */
+
+.btn {
+  border: 1px solid #666;
+}

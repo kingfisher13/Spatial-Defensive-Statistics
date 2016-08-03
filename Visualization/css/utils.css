@@ -1,0 +1,54 @@
+/*-------------------------
+Axis Maps
+- Utility CSS rules
+-------------------------*/
+
+.u-circle {
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.u-square {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+}
+
+.u-hidden { /* generally for stuff that needs to be hidden from the get go */
+  display: none;
+}
+
+.u-no-margin {
+  margin: 0 !important;
+}
+
+.u-uppercase {
+  text-transform: uppercase;
+}
+
+.u-white-space-fix {
+  margin-right: -4px;
+}
+
+.u-fl-l {
+  float: left;
+}
+
+.u-fl-r {
+  float: right;
+}
+
+
+
+/* Accessibility utility classes */
+
+.a-hidden {
+  position: absolute !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 1px;
+  width: 1px;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+}

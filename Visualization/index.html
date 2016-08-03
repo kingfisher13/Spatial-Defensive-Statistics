@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game Visualization</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0"/>
+
+    <!-- build:css css/{{site}}.css -->
+    <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css" />
+
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/utils.css" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <!-- endbuild -->
+  </head>
+
+  <body>
+    <div class="main-wrapper">
+      <div class="title-bar">
+        <span class="title-bar--home"></span>
+        <span> vs </span>
+        <span class="title-bar--away"></span>
+      </div>
+      <div>
+        <span class="game-date"></span>
+      </div>
+      <svg class="court"></svg>
+      <div class="time-bar">
+        <div class="time-bar--block">Quarter: <span class="quarter"></span></div>
+        <div class="score">0 - 0</div>
+        <span class="time-bar--block game-clock"></span>
+        <span class="time-bar--block shot-clock"></span>
+      </div>
+      <div class="play-controls">
+        <button class="btn play-controls--play">Play</button>
+        <button class="btn play-controls--pause">Pause</button>
+        <button class="btn play-controls--reset">Reset</button>
+        <button class="btn play-controls--forward">Forward 1 Frame</button>
+        <button class="btn play-controls--back">Back 1 Frame</button>
+      </div>
+      <div class="ratings">
+        <table class="ratings--table">
+          <thead><tr><td colspan="2" class="ratings--home-team"></td></tr></thead>
+          <tbody class="ratings--home-table-body"></tbody>
+        </table>
+        <div class="ratings--middle">
+          <div class="possession-arrow arrow-right"></div>
+          <span class="last-play"></span>
+        </div>
+        <table class="ratings--table">
+          <thead><tr><td colspan="2" class="ratings--away-team"></td></tr></thead>
+          <tbody class="ratings--away-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+  <!-- build:js js/{{site}}.js -->
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/underscore/underscore-min.js"></script>
+  <script src="../bower_components/d3/d3.min.js"></script>
+  <script src="../bower_components/d3-queue/d3-queue.js"></script>
+
+  <script src="js/init.js"></script>
+  <!-- endbuild -->
+  </body>
+</html>

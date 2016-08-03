@@ -1,0 +1,85 @@
+/*-------------------------
+Axis Maps
+- Default CSS rules (normalize.css is already called in the HTML)
+-------------------------*/
+
+/* Base classes */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+strong,
+.strong {
+  font-weight: 700;
+}
+
+italic, em {
+  font-style: italic;
+}
+
+/* Layout Related */
+
+.l-row {
+  clear: both;
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.l-col {
+  box-sizing: border-box;
+  float: left;
+  position: relative;
+}
+
+.l-col-2 {
+  box-sizing: border-box;
+  float: left;
+  position: relative;
+  width: 50%;
+}
+
+.l-col-3 {
+  box-sizing: border-box;
+  float: left;
+  position: relative;
+  width: 33%;
+}
+
+/* Style Defaults that we use alot */
+
+.btn { /* Extend the colors with '.btn--*' in theme.css */
+  border-radius: 5px;
+  display: inline-block;
+  padding: 1em 2em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.btn-group .btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group .btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -5px;
+}
+
+.horz-bar {
+  border-top: 1px solid; /* Border color/opacity should be specified in theme.css */
+  margin: 5px 0;
+  width: 100%;
+}
+
+.vert-bar {
+  border-right: 1px solid; /* Border color/opacity should be specified in theme.css */
+  display: inline-block;
+  height: 100%;
+  margin: 0 5px;
+  vertical-align: middle;
+}
