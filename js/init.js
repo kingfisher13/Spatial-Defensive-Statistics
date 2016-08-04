@@ -17,7 +17,12 @@
       { data: 'lastname' },
       { data: 'team' },
       { data: 'position' },
-      { data: 'stats.average' },
+      {
+        data: 'stats.average',
+        render: function (data) {
+          return Math.round(data * 100) / 100;
+        }
+      },
       { data: 'stats.min' },
       { data: 'stats.max' }
     ],
