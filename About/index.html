@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0"/>
+
+    <!-- build:css css/{{site}}.css -->
+    <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css" />
+
+    <link rel="stylesheet" href="../css/default.css" />
+    <link rel="stylesheet" href="../css/utils.css" />
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/fontello.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <!-- endbuild -->
+  </head>
+
+  <body>
+    <nav>
+      <h1 class="nav--title">Spatial Defensive<br />Statistics</h1>
+      <p><a class="nav--link"  href="../index.html"><i class="icon icon-th-list"></i>Tables</a></p>
+      <p><a class="nav--link"  href="../visualization/index.html"><i class="icon icon-video"></i>Visualization</a></p>
+      <p><a class="nav--link" href="#"><i class="icon icon-info"></i>About this Project</a></p>
+    </nav>
+
+    <div class="main-wrapper">
+      <p>This is a project by <a href="http://kfcartography.com">Josh Ryan</a>. It aims to explore the relationship between defense and space as played in the NBA (National Basketball Association). The algorithms used to generate the various statistics are described below. The Visualization page shows an example game with the currently selected algorithm. Blue lines are the defensive pairings (who is guarding who) that are used to calculate the Plus/Minus statistics in the table.</p>
+      <h2>Simple Closest</h2>
+      <p>For each frame, the algorithm picks a random player and determines the closest opposing team member and pairs the two. Then it picks another random player, checks to see if the player has been picked or paired before, and then if not, finds the closest opposing team member and pairs it.</p>
+      <p>Downsides:</p>
+      <ul>
+        <li>Multiple defenders can be penalized for a basket. Sometimes this is appropriate, others times, not so much (e.g. big man rotates to crash the boards and is paired with the shooter milliseconds before the shot).</li>
+        <li>Great offensive players can "hide" their defensive liabilties by scoring a lot. See James Harden.</li>
+        <li>Really bad defenders who are completely blown past are not necessarily penalized if a help defender ends up being closer at the moment of the shot.</li>
+        <li>Simple Closest does not do any analysis on shots that don't go in. This obviously is bad from a measuring defensive ability standpoint.</li>
+      </ul>
+    </div>
+
+  <!-- build:js js/{{site}}.js -->
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/underscore/underscore-min.js"></script>
+
+  <script src="js/init.js"></script>
+  <!-- endbuild -->
+  </body>
+</html>

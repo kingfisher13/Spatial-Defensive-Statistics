@@ -62,7 +62,8 @@ svg {
 }
 
 .btn:hover {
-  background-color: #aaa
+  background-color: #aaa;
+  cursor: pointer;
 }
 
 /* Bottom area */
