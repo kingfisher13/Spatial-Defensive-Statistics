@@ -7,7 +7,6 @@
     $.getJSON('data/aggregate.json', function (data) {
       DATA = data;
       processData();
-      console.log(DATA);
       buildTable();
       buildFilters();
       customEvents();
@@ -89,14 +88,14 @@
   function buildFilters() {
     /* Filter UI */
     FILTERS.forEach(function (f) {
+      $('<p>')
+        .addClass('filter--text')
+        .text(f[0])
+        .appendTo($('.filters'));
+
       var $fl = $('<div>')
         .addClass('filter--line')
         .appendTo($('.filters'));
-
-      $('<span>')
-        .addClass('filter--text')
-        .text(f[0])
-        .appendTo($fl);
 
       var $slider = $('<div>')
         .addClass('filter--slider filter--' + f[1])
@@ -111,10 +110,23 @@
         range: {
           min: min,
           max: max
+        },
+        pips: {
+          mode: 'positions',
+          values: [0, 100],
+          density: 4
         }
       });
 
       $slider[0].noUiSlider.on('update', TABLE.draw);
+      $slider[0].noUiSlider.on('slide', function (v, h, u, t, p) {
+        var $pips = $('.noUi-pips', $slider);
+        $pips.find('div:first-of-type').css('left', p[0] + '%');
+        $pips.find('div:first-of-type').next().css('left', p[0] + '%').text(Math.round(u[0]));
+
+        $pips.find('div:last-of-type').css('left', p[1] + '%').text(Math.round(u[1]));
+        $pips.find('div:last-of-type').prev().css('left', p[1] + '%');
+      });
     });
   }
 
