@@ -121,6 +121,7 @@
       $slider[0].noUiSlider.on('change', TABLE.draw);
       $slider[0].noUiSlider.on('slide', updatePips);
       $slider[0].noUiSlider.on('set', updatePips);
+      $slider[0].noUiSlider.on('set', TABLE.draw);
     });
 
     function updatePips(v, h, u, t, p) {
