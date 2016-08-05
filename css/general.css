@@ -21,3 +21,13 @@ body{
 .vert-bar {
   border-color: #252525;
 }
+
+a {
+  color: #555;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #111;
+  text-decoration: none;
+}

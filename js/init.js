@@ -118,16 +118,19 @@
         }
       });
 
-      $slider[0].noUiSlider.on('update', TABLE.draw);
-      $slider[0].noUiSlider.on('slide', function (v, h, u, t, p) {
-        var $pips = $('.noUi-pips', $slider);
-        $pips.find('div:first-of-type').css('left', p[0] + '%');
-        $pips.find('div:first-of-type').next().css('left', p[0] + '%').text(Math.round(u[0]));
-
-        $pips.find('div:last-of-type').css('left', p[1] + '%').text(Math.round(u[1]));
-        $pips.find('div:last-of-type').prev().css('left', p[1] + '%');
-      });
+      $slider[0].noUiSlider.on('change', TABLE.draw);
+      $slider[0].noUiSlider.on('slide', updatePips);
+      $slider[0].noUiSlider.on('set', updatePips);
     });
+
+    function updatePips(v, h, u, t, p) {
+      var $pips = $('.noUi-pips', $(this.target));
+      $pips.find('div:first-of-type').css('left', p[0] + '%');
+      $pips.find('div:first-of-type').next().css('left', p[0] + '%').text(Math.round(u[0]));
+
+      $pips.find('div:last-of-type').css('left', p[1] + '%').text(Math.round(u[1]));
+      $pips.find('div:last-of-type').prev().css('left', p[1] + '%');
+    }
   }
 
   function customEvents() {
@@ -145,5 +148,13 @@
         return keepRow;
       }
     );
+
+    $('.filters--reset-link').on('click', function () {
+      $('.filter--slider').each(function () {
+        var slider = $(this)[0].noUiSlider;
+        slider.set([slider.options.start[0], slider.options.start[1]]);
+      });
+
+    });
   }
 })($, _);

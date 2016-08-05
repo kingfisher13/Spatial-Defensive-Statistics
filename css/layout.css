@@ -26,7 +26,13 @@ nav {
 
 .filters h2 {
   color: #555;
+  display: inline-block;
   font-size: 20px;
+}
+
+.filters--reset-link {
+  font-size: 14px;
+  margin-left: 20px;
 }
 
 .filter--line {
