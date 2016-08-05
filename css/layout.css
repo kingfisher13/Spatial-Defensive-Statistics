@@ -40,3 +40,7 @@ nav {
 .filter--text {
   margin-right: 10px;
 }
+
+.filter--slider {
+  width: 400px;
+}
