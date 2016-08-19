@@ -1,15 +1,14 @@
 /*-------------------------
-- Main page Layout CSS rules
+- About page Layout CSS rules
 -------------------------*/
 
 nav {
   float: left;
 }
 
-.wrapper {
-  align-items: flex-start;
+.main-wrapper {
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   padding: 50px;
 }

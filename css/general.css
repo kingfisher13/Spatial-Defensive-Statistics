@@ -5,12 +5,12 @@
 /* Fonts and typography */
 
 html,
-body{
-  font-family: 'Arial', sans-serif; /* text/default font */
+body {
+  font-family: 'Raleway', 'Arial', sans-serif; /* text/default font */
 }
 
 .display-font {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Raleway', 'Arial', sans-serif;
   font-weight: 700;
 }
 
