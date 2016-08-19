@@ -28,10 +28,14 @@
     </nav>
 
     <div class="main-wrapper">
-      <p>This is a project by <a href="http://kfcartography.com">Josh Ryan</a>. It aims to explore the relationship between defense and space as played in the NBA (National Basketball Association). The algorithms used to generate the various statistics are described below. The Visualization page shows an example game with the currently selected algorithm. Blue lines are the defensive pairings (who is guarding who) that are used to calculate the Plus/Minus statistics in the table.</p>
+      <p>This is a project by <a href="http://kfcartography.com">Josh Ryan</a>. It aims to explore the relationship between defense and space as played in the NBA (National Basketball Association). The algorithms used to generate the various statistics are described below. The Visualization page shows an example game with the currently selected algorithm. Blue lines are the defensive pairings (who is guarding who) that are used to calculate the Plus/Minus statistics in the table. These Plus/Minus stats are more granular than either the Team Plus/Minus or the Player Plus/Minus from the Box scores.</p>
       <h2>Simple Closest</h2>
-      <p>For each frame, the algorithm picks a random player and determines the closest opposing team member and pairs the two. Then it picks another random player, checks to see if the player has been picked or paired before, and then if not, finds the closest opposing team member and pairs it.</p>
-      <p>Downsides:</p>
+      <p>For each frame, the algorithm picks a random player and determines the closest opposing team member and pairs the two. Then it picks another random player, checks to see if the player has been picked or paired before, and then if not, finds the closest opposing team member and pairs it. This can, maybe counter-intuitively, result in several defensive players being associated with a given offensive player and vice versa.</p>
+      <h3>Upside:</h3>
+      <ul>
+        <li>Sometimes it really is the case that multiple people should be penalized for a bucket. Penalizing 2 or more defenders isn't apart of any standard Plus/Minus.</li>
+      </ul>
+      <h3>Downsides:</h3>
       <ul>
         <li>Multiple defenders can be penalized for a basket. Sometimes this is appropriate, others times, not so much (e.g. big man rotates to crash the boards and is paired with the shooter milliseconds before the shot).</li>
         <li>Great offensive players can "hide" their defensive liabilties by scoring a lot. See James Harden.</li>
