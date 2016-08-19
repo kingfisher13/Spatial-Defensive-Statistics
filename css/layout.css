@@ -2,16 +2,9 @@
 - Main page Layout CSS rules
 -------------------------*/
 
-nav {
-  float: left;
-}
-
 .main-wrapper {
-  align-items: flex-start;
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
-  padding: 50px;
 }
 
 .stats-table {

@@ -1,0 +1,20 @@
+/*-------------------------
+- Site Layout CSS rules
+-------------------------*/
+
+.layout-wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+nav {
+  height: 100%;
+  width: 15%;
+}
+
+.main-wrapper {
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding: 50px;
+}

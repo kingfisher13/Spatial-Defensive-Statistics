@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../css/default.css" />
     <link rel="stylesheet" href="../css/utils.css" />
     <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/site-layout.css" />
     <link rel="stylesheet" href="../css/nav.css" />
     <link rel="stylesheet" href="../css/fontello.css" />
     <link rel="stylesheet" href="css/layout.css" />
@@ -20,57 +21,59 @@
   </head>
 
   <body>
-    <nav>
-      <h1 class="nav--title">Spatial Defensive<br />Statistics</h1>
-      <p><a class="nav--link"  href="../index.html"><i class="icon icon-th-list"></i>Tables</a></p>
-      <p><a class="nav--link"  href="#"><i class="icon icon-video"></i>Visualization</a></p>
-      <p><a class="nav--link" href="../about/index.html"><i class="icon icon-info"></i>About this Project</a></p>
-    </nav>
+    <div class="layout-wrapper">
+      <nav>
+        <h1 class="nav--title">Spatial Defensive<br />Statistics</h1>
+        <p><a class="nav--link"  href="../index.html"><i class="icon icon-th-list"></i>Tables</a></p>
+        <p><a class="nav--link"  href="#"><i class="icon icon-video"></i>Visualization</a></p>
+        <p><a class="nav--link" href="../about/index.html"><i class="icon icon-info"></i>About this Project</a></p>
+      </nav>
 
-    <div class="main-wrapper">
+      <div class="main-wrapper">
 
-      <!-- Top information -->
-      <div class="title-bar">
-        <span class="title-bar--home"></span>
-        <span> vs </span>
-        <span class="title-bar--away"></span>
-      </div>
-      <div>
-        <span class="game-date"></span>
-      </div>
-
-      <!-- Court/Timings/Score bar -->
-      <svg class="court"></svg>
-      <div class="time-bar">
-        <div class="score">0 - 0</div>
-        <div class="time-bar--block period-clock">Period: <span class="period"></span></div>
-        <span class="time-bar--block game-clock"></span>
-        <span class="time-bar--block shot-clock"></span>
-      </div>
-
-      <!-- Animation controls -->
-      <div class="play-controls">
-        <button class="btn play-controls--play">Play</button>
-        <button class="btn play-controls--pause">Pause</button>
-        <button class="btn play-controls--reset">Reset</button>
-        <button class="btn play-controls--forward">Forward 1 Frame</button>
-        <button class="btn play-controls--back">Back 1 Frame</button>
-      </div>
-
-      <!-- Extra information -->
-      <div class="bottom">
-        <div class="extra-information">
-          <p>Ball Handler: <span class="ball-handler"></span></p>
-          <p>Last Play: <span class="last-play"></span></p>
+        <!-- Top information -->
+        <div class="title-bar">
+          <span class="title-bar--home"></span>
+          <span> vs </span>
+          <span class="title-bar--away"></span>
         </div>
-        <table class="result-table">
-          <thead><tr>
-            <td>Team</td>
-            <td>Player</td>
-            <td>+/-</td>
-          </tr></thead>
-          <tbody class="results"></tbody>
-        </table>
+        <div>
+          <span class="game-date"></span>
+        </div>
+
+        <!-- Court/Timings/Score bar -->
+        <svg class="court"></svg>
+        <div class="time-bar">
+          <div class="score">0 - 0</div>
+          <div class="time-bar--block period-clock">Period: <span class="period"></span></div>
+          <span class="time-bar--block game-clock"></span>
+          <span class="time-bar--block shot-clock"></span>
+        </div>
+
+        <!-- Animation controls -->
+        <div class="play-controls">
+          <button class="btn play-controls--play">Play</button>
+          <button class="btn play-controls--pause">Pause</button>
+          <button class="btn play-controls--reset">Reset</button>
+          <button class="btn play-controls--forward">Forward 1 Frame</button>
+          <button class="btn play-controls--back">Back 1 Frame</button>
+        </div>
+
+        <!-- Extra information -->
+        <div class="bottom">
+          <div class="extra-information">
+            <p>Ball Handler: <span class="ball-handler"></span></p>
+            <p>Last Play: <span class="last-play"></span></p>
+          </div>
+          <table class="result-table">
+            <thead><tr>
+              <td>Team</td>
+              <td>Player</td>
+              <td>+/-</td>
+            </tr></thead>
+            <tbody class="results"></tbody>
+          </table>
+        </div>
       </div>
     </div>
 

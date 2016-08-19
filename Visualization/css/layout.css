@@ -2,10 +2,6 @@
 - Visualization specific CSS rules
 -------------------------*/
 
-nav {
-  float: left;
-}
-
 .main-wrapper {
   align-items: center;
   display: flex;
@@ -56,7 +52,7 @@ svg {
 .btn {
   background-color: #ccc;
   border: none;
-  border-radius: 1px;
+  border-radius: 5px;
   color: #333;
   padding: 5px 10px;
 }
