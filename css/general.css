@@ -6,28 +6,30 @@
 
 html,
 body {
+  background-color: #eee;
+  color: #222;
   font-family: 'Raleway', 'Arial', sans-serif; /* text/default font */
+  font-size: 16px;
+  line-height: 1.6;
 }
-
-.display-font {
-  font-family: 'Raleway', 'Arial', sans-serif;
-  font-weight: 700;
-}
-
-
-/* if the highlight color changes based on JS, don't use this class, use js-highlight-color instead */
 
 .horz-bar,
 .vert-bar {
   border-color: #252525;
 }
 
+h1,
+h2,
+h3 {
+  line-height:1.2
+}
+
 a {
-  color: #555;
+  color: #666;
   text-decoration: none;
 }
 
 a:hover {
-  color: #111;
+  color: #222;
   text-decoration: none;
 }
