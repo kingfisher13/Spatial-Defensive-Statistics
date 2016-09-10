@@ -1,5 +1,5 @@
 {
-  "name": "Spatial-Defensive-Statistics",
+  "name": "spatial-defensive-statistics",
   "version": "0.1.0",
   "dependencies": {
     "jquery": "~3.0.0",
